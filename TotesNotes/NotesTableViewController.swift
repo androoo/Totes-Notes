@@ -20,6 +20,10 @@ class NotesTableViewController: UITableViewController {
         navigationController?.navigationBar.barTintColor = navBarColor
         navigationController?.navigationBar.tintColor = navBarTextColor
         
+        title = "Totes Notes"
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Notes", style: .plain, target: self, action: nil)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +42,7 @@ class NotesTableViewController: UITableViewController {
         
         let note = NoteController.shared.notesArray[indexPath.row]
         cell.textLabel?.text = note.note
+        cell.textLabel?.textColor = bodyTextColor
         
         return cell
     }
@@ -55,5 +60,27 @@ class NotesTableViewController: UITableViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow, let destinationViewController = segue.destination as? NoteDetailViewController else { return }
+        
+        let selectedNote = NoteController.shared.notesArray[indexPath.row]
+        destinationViewController.note = selectedNote
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

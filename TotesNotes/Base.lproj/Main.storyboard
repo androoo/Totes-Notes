@@ -103,9 +103,12 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eYK-eD-d3Z" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WGu-Q2-vOb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WGu-Q2-vOb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.45000000000000001" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
