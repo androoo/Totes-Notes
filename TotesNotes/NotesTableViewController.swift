@@ -49,9 +49,14 @@ class NotesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            
+            let note = NoteController.shared.notesArray[indexPath.row]
+            NoteController.shared.remove(note: note)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+    
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 65

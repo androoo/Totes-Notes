@@ -33,10 +33,20 @@ class NoteDetailViewController: UIViewController {
         super.viewDidLoad()
         title = ""
         updateViews()
+        
+        setTextViewStyle(textView: noteTextView)
     }
 
     
     //MARK: - Helper Methods
+    
+    func setTextViewStyle(textView: UITextView) {
+        textView.textColor = .black
+        
+        automaticallyAdjustsScrollViewInsets = false
+        textView.contentInset = UIEdgeInsets(top: 15, left: 15, bottom: 30, right: 15)
+    }
+    
     func updateViews() {
         guard let note = note else { return }
         noteTextView.text = note.note
