@@ -6,6 +6,111 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="vzD-Iz-0nk">
+            <objects>
+                <tableViewController id="AdB-9d-mkS" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZQh-B4-i1S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteCell" textLabel="EwT-uk-eD5" style="IBUITableViewCellStyleDefault" id="HBl-ga-MEV">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HBl-ga-MEV" id="Hxd-Ll-rP3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EwT-uk-eD5">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="fzi-lp-lAS" kind="show" identifier="toNoteDetail" id="mZ1-Tw-Bkd"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AdB-9d-mkS" id="4xY-Oc-bTb"/>
+                            <outlet property="delegate" destination="AdB-9d-mkS" id="ipG-fL-obA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="QhQ-S9-jXf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="iav-zH-aSU">
+                            <connections>
+                                <segue destination="fzi-lp-lAS" kind="show" id="pea-c3-RUH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zBm-MB-TGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="719" y="-105"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="fiy-Pu-8Ed">
+            <objects>
+                <viewController id="fzi-lp-lAS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sj7-Yu-iMO"/>
+                        <viewControllerLayoutGuide type="bottom" id="e8D-cD-lCR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tUi-pB-30L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5ae-3o-h3g">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5ae-3o-h3g" firstAttribute="trailing" secondItem="tUi-pB-30L" secondAttribute="trailing" id="2nc-Eh-Ed2"/>
+                            <constraint firstItem="5ae-3o-h3g" firstAttribute="top" secondItem="Sj7-Yu-iMO" secondAttribute="bottom" id="XPV-ms-R8u"/>
+                            <constraint firstItem="e8D-cD-lCR" firstAttribute="top" secondItem="5ae-3o-h3g" secondAttribute="bottom" id="oIe-lT-3I6"/>
+                            <constraint firstItem="5ae-3o-h3g" firstAttribute="leading" secondItem="tUi-pB-30L" secondAttribute="leading" id="weS-AS-Luf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="n6U-V4-X2V">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="OTb-gN-SzJ"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j24-dv-7ck" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1501.5999999999999" y="-105.69715142428787"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8Jm-eJ-zV4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eYK-eD-d3Z" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WGu-Q2-vOb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AdB-9d-mkS" kind="relationship" relationship="rootViewController" id="r6N-H8-nze"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="30X-sW-iG2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="-104.7976011994003"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="mZ1-Tw-Bkd"/>
+    </inferredMetricsTieBreakers>
 </document>
