@@ -20,7 +20,6 @@ let restingTextColor = UIColor.init(red: 176/255.0, green: 190/255.0, blue: 203/
 
 let viewBackgroundColor = UIColor.init(red: 245/255.0, green: 248/255.0, blue: 250/255.0, alpha: 1)
 
-//MARK: - Image Foramating
 
 
 
