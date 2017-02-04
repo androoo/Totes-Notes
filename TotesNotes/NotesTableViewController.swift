@@ -20,6 +20,10 @@ class NotesTableViewController: UITableViewController {
         navigationController?.navigationBar.barTintColor = navBarColor
         navigationController?.navigationBar.tintColor = navBarTextColor
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         tableView.reloadData()
     }
 
@@ -42,6 +46,10 @@ class NotesTableViewController: UITableViewController {
         if editingStyle == .delete {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
     }
     
     

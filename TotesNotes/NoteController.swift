@@ -10,11 +10,6 @@ import Foundation
 
 class NoteController {
     
-    //MARK: - Properties 
-    //singleton to give access to all these object answers
-    //empty array of notes initialized 
-    //some key i think 
-    
     static let shared = NoteController()
     var notesArray = [Note]()
     fileprivate static let myNotesKey = "notes"
