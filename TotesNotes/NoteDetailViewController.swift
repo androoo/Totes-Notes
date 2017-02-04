@@ -9,6 +9,21 @@
 import UIKit
 
 class NoteDetailViewController: UIViewController {
+    
+    //MARK: - Properties
+    
+    
+    //MARK: - Outlets
+    @IBOutlet weak var noteTextView: UITextView!
+    
+    //MARK: - Actions
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        
+    }
+    
+    
+    //MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()

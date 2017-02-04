@@ -15,6 +15,7 @@
 		5A1336281E456AD90046FFA5 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1336271E456AD90046FFA5 /* NotesTableViewController.swift */; };
 		5A13362A1E456B0F0046FFA5 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1336291E456B0F0046FFA5 /* Note.swift */; };
 		5A13362C1E456B260046FFA5 /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13362B1E456B260046FFA5 /* NoteController.swift */; };
+		5A13362F1E457E7F0046FFA5 /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13362E1E457E7F0046FFA5 /* StyleSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5A1336271E456AD90046FFA5 /* NotesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 		5A1336291E456B0F0046FFA5 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		5A13362B1E456B260046FFA5 /* NoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
+		5A13362E1E457E7F0046FFA5 /* StyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				5A1336241E4567190046FFA5 /* ViewController */,
 				5A1336231E4567110046FFA5 /* ModelController */,
 				5A1336221E4567040046FFA5 /* Model */,
+				5A13362D1E457E610046FFA5 /* Helper */,
 				5A1336201E4566D90046FFA5 /* Resources */,
 			);
 			path = TotesNotes;
@@ -115,10 +118,18 @@
 		5A1336241E4567190046FFA5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5A1336251E456ABA0046FFA5 /* NoteDetailViewController.swift */,
 				5A1336271E456AD90046FFA5 /* NotesTableViewController.swift */,
+				5A1336251E456ABA0046FFA5 /* NoteDetailViewController.swift */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		5A13362D1E457E610046FFA5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5A13362E1E457E7F0046FFA5 /* StyleSheet.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +208,7 @@
 				5A13360E1E45669A0046FFA5 /* AppDelegate.swift in Sources */,
 				5A1336261E456ABA0046FFA5 /* NoteDetailViewController.swift in Sources */,
 				5A1336281E456AD90046FFA5 /* NotesTableViewController.swift in Sources */,
+				5A13362F1E457E7F0046FFA5 /* StyleSheet.swift in Sources */,
 				5A13362A1E456B0F0046FFA5 /* Note.swift in Sources */,
 				5A13362C1E456B260046FFA5 /* NoteController.swift in Sources */,
 			);

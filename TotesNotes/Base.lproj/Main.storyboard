@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eYK-eD-d3Z">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Title-->
         <scene sceneID="vzD-Iz-0nk">
             <objects>
-                <tableViewController id="AdB-9d-mkS" sceneMemberID="viewController">
+                <tableViewController id="AdB-9d-mkS" customClass="NotesTableViewController" customModule="TotesNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZQh-B4-i1S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
         <!--Title-->
         <scene sceneID="fiy-Pu-8Ed">
             <objects>
-                <viewController id="fzi-lp-lAS" sceneMemberID="viewController">
+                <viewController id="fzi-lp-lAS" customClass="NoteDetailViewController" customModule="TotesNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sj7-Yu-iMO"/>
                         <viewControllerLayoutGuide type="bottom" id="e8D-cD-lCR"/>
@@ -68,10 +68,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5ae-3o-h3g">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add note" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5ae-3o-h3g">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -84,8 +84,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="n6U-V4-X2V">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="OTb-gN-SzJ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="OTb-gN-SzJ">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="fzi-lp-lAS" id="PJq-8J-OUi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="noteTextView" destination="5ae-3o-h3g" id="Ept-vm-ubx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j24-dv-7ck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
