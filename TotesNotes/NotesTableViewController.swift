@@ -65,11 +65,10 @@ class NotesTableViewController: UITableViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "toNoteDetail" {
             guard let destinationViewController = segue.destination as? NoteDetailViewController,
                 let indexPath = tableView.indexPathForSelectedRow else { return }
-            
+            destinationViewController.loadViewIfNeeded()
             let entry = NoteController.shared.entries[indexPath.row]
             destinationViewController.entry = entry
         }

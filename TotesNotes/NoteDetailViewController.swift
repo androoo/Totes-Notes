@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class NoteDetailViewController: UIViewController {
     
     //MARK: - Properties
@@ -21,6 +22,7 @@ class NoteDetailViewController: UIViewController {
     }
     
     //MARK: - Outlets
+    
     @IBOutlet weak var noteTextView: UITextView!
     
     //MARK: - Actions
@@ -28,19 +30,19 @@ class NoteDetailViewController: UIViewController {
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let enteredNote = noteTextView.text, !enteredNote.isEmpty else { return }
         NoteController.shared.addNewEntry(note: enteredNote)
-        
         _ = navigationController?.popViewController(animated: true)
     }
     
-    
-    //MARK: - View Life Cycle
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTextViewStyle(textView: noteTextView)
+        updateViews()
+    }
     
     //MARK: - Helper Methods
     
     func setTextViewStyle(textView: UITextView) {
         textView.textColor = .black
-        
         automaticallyAdjustsScrollViewInsets = false
         textView.contentInset = UIEdgeInsets(top: 15, left: 15, bottom: 30, right: 15)
     }

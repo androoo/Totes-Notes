@@ -28,7 +28,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EwT-uk-eD5">
                                             <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -74,7 +74,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="OKQ-pG-dmI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -94,7 +94,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="noteTextView" destination="5ae-3o-h3g" id="Ept-vm-ubx"/>
+                        <outlet property="noteTextView" destination="5ae-3o-h3g" id="Tl9-S8-TJB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j24-dv-7ck" userLabel="First Responder" sceneMemberID="firstResponder"/>
