@@ -34,15 +34,15 @@ class NotesTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return NoteController.shared.notesArray.count
+        return NoteController.shared.entries.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath)
         
-        let note = NoteController.shared.notesArray[indexPath.row]
-        cell.textLabel?.text = note.note
-        cell.textLabel?.textColor = bodyTextColor
+        let entry = NoteController.shared.entries[indexPath.row]
+        cell.textLabel?.text = entry.note
+        
         
         return cell
     }
@@ -50,8 +50,8 @@ class NotesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            let note = NoteController.shared.notesArray[indexPath.row]
-            NoteController.shared.remove(note: note)
+            
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -65,10 +65,15 @@ class NotesTableViewController: UITableViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let indexPath = tableView.indexPathForSelectedRow, let destinationViewController = segue.destination as? NoteDetailViewController else { return }
         
-        let selectedNote = NoteController.shared.notesArray[indexPath.row]
-        destinationViewController.note = selectedNote
+        if segue.identifier == "toNoteDetail" {
+            guard let destinationViewController = segue.destination as? NoteDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { return }
+            
+            let entry = NoteController.shared.entries[indexPath.row]
+            destinationViewController.entry = entry
+        }
+        
     }
 }
 

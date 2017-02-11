@@ -11,7 +11,14 @@ import UIKit
 class NoteDetailViewController: UIViewController {
     
     //MARK: - Properties
-    var note: Note?
+    var entry: Entry? {
+        didSet {
+            if !isViewLoaded {
+                loadView()
+            }
+            updateViews()
+        }
+    }
     
     //MARK: - Outlets
     @IBOutlet weak var noteTextView: UITextView!
@@ -20,23 +27,14 @@ class NoteDetailViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let enteredNote = noteTextView.text, !enteredNote.isEmpty else { return }
-        let note = Note(note: enteredNote)
-        NoteController.shared.add(note: note)
+        NoteController.shared.addNewEntry(note: enteredNote)
         
         _ = navigationController?.popViewController(animated: true)
     }
     
     
     //MARK: - View Life Cycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = ""
-        updateViews()
-        
-        setTextViewStyle(textView: noteTextView)
-    }
-
+    
     
     //MARK: - Helper Methods
     
@@ -48,8 +46,8 @@ class NoteDetailViewController: UIViewController {
     }
     
     func updateViews() {
-        guard let note = note else { return }
-        noteTextView.text = note.note
+        guard let entry = entry else { return }
+        noteTextView.text = entry.note
     }
 }
 

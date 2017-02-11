@@ -7,31 +7,30 @@
 //
 
 import Foundation
+import CoreData
 
 class NoteController {
     
     static let shared = NoteController()
-    var notesArray = [Note]()
-    fileprivate static let myNotesKey = "notes"
     
-    //MARK: - initialize object with load func
-    init() {
-        loadFromPersistentStorage()
+    var entries: [Entry] {
+        let request: NSFetchRequest<Entry> = Entry.fetchRequest()
+        return ( try? CoreDataStack.context.fetch(request)) ?? []
     }
     
     
     //MARK: - CRUD
     
     //add func
-    func add(note: Note) {
-        notesArray.append(note)
+    func addNewEntry(note: String){
+        let _ = Entry(note: note)
         saveToPersistentStorage()
     }
     
+    
     //remove func
-    func remove(note: Note) {
-        guard let index = notesArray.index(of: note) else { return }
-        notesArray.remove(at: index)
+    func deleteNote(entry: Entry) {
+        CoreDataStack.context.delete(entry)
         saveToPersistentStorage()
     }
     
@@ -40,20 +39,10 @@ class NoteController {
     
     //save func
     func saveToPersistentStorage() {
-        let userDefaults = UserDefaults.standard
-        let notesDictionary = notesArray.map { $0.dictionaryRepresentaiton }
-        userDefaults.set(notesDictionary, forKey: NoteController.myNotesKey)
+        do {
+            try CoreDataStack.context.save()
+        } catch let error {
+            print("There was a problem saving: \(error)")
+        }
     }
-    
-    //load func
-    func loadFromPersistentStorage() {
-        //persistent storage instance
-        let userDefaults = UserDefaults.standard
-        //create dict prop by looking in user defaults objects with a key as types
-        guard let notesDictionary = userDefaults.object(forKey: NoteController.myNotesKey) as? [[String: String]] else { return }
-        // set notes array to the flatmapped dictionary
-        notesArray = notesDictionary.flatMap { Note(dictionary: $0) }
-    }
-    
-    
 }
